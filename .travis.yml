@@ -15,6 +15,3 @@ after_success:
 - eval $(aws ecr get-login --registry-ids $AWS_ACCOUNT_NUMBER --region eu-west-2 --no-include-email)
 - docker tag $REPO:$TAG $AWS_ACCOUNT_NUMBER.dkr.ecr.eu-west-2.amazonaws.com/$REPO:$TAG
 - docker push $AWS_ACCOUNT_NUMBER.dkr.ecr.eu-west-2.amazonaws.com/$REPO:$TAG
-
-notifications:
-    slack: bymiles:u7E9pEbrU1gdYCZ297DgFeua
