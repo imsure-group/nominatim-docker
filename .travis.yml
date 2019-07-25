@@ -6,7 +6,8 @@ env:
   - TAG=v2.0.$TRAVIS_BUILD_NUMBER
 
 script:
-- docker build -t $REPO:$TAG -f 3.3/Dockerfile .
+- cd 3.3/
+- docker build -t $REPO:$TAG -f Dockerfile .
 
 after_success:
 - docker --version  
